@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div class="div_conteudo col-md-12 col-lg-8 offset-lg-2">
+        <h3 class="my-4 custom-title">{{ isEditMode ? 'Editar Número' : 'Adicionar Novo Número' }}</h3>
+    
+        <form [formGroup]="phoneForm" (ngSubmit)="onSubmit()">   
+
+        <!-- Número -->
+        <div class="form-group mb-3">
+            <label for="value" class="form-label">Número</label>
+            <input type="text" id="value" class="form-control" formControlName="value" placeholder="Digite o número">
+            <div *ngIf="phoneForm.get('value')?.invalid && phoneForm.get('value')?.touched" class="text-danger">
+                O número de telefone é obrigatório.
+            </div>            
+        </div>
+    
+        <!-- Preço Mensal -->
+        <div class="form-group mb-3">
+            <label for="monthlyPrice" class="form-label">Preço Mensal</label>
+            <input type="number" id="monthlyPrice" class="form-control" formControlName="monthlyPrice" placeholder="Digite o preço">
+            <div *ngIf="phoneForm.get('monthlyPrice')?.invalid && phoneForm.get('monthlyPrice')?.touched" class="text-danger">
+                O preço mensal é obrigatório e deve ser um número positivo.
+            </div>
+        </div>
+    
+        <!-- Preço de Setup -->
+        <div class="form-group mb-3">
+            <label for="setupPrice" class="form-label">Preço de Configuração</label>
+            <input type="number" id="setupPrice" class="form-control" formControlName="setupPrice" placeholder="Digite o preço">
+            <div *ngIf="phoneForm.get('setupPrice')?.invalid && phoneForm.get('setupPrice')?.touched" class="text-danger">
+                O preço de setup é obrigatório e deve ser um número positivo.
+            </div>            
+        </div>
+    
+        <!-- Moeda -->
+        <div class="form-group mb-3">
+            <label for="currency" class="form-label">Moeda</label>
+            <select id="currency" class="form-control" formControlName="currency">
+                <option value="" selected disabled>Selecione uma moeda</option>
+                <option value="BRL">BRL</option>
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+            </select>
+            <div *ngIf="phoneForm.get('currency')?.invalid && phoneForm.get('currency')?.touched" class="text-danger">
+                A moeda é obrigatória.
+            </div>
+        </div>        
+    
+        <button type="submit" class="btn btn-primary btn-sm" [disabled]="phoneForm.invalid">
+            {{ isEditMode ? 'Editar' : 'Salvar' }}
+        </button>
+
+        <button type="button" class="btn btn-light btn-sm" (click)="goBack()">Voltar</button>
+        </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md navbar-dark shadow-sm fixed-top">
+    <div class="container">
+    
+    <a class="navbar-brand d-flex align-items-center" href="/">
+       <img src="../../assets/logo.svg" alt="" style="height: 30px;" class="">     
+    </a>
+        
+    <button class="navbar-toggler" type="button" (click)="toggleDrawer()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+       
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto"> 
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/phone-numbers">Listar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/phone-numbers/new">Adicionar</a>
+        </li>
+      </ul>
+    </div>
+</div>
+  </nav>
+
+  <div class="drawer d-md-none" [ngClass]="{'open': isDrawerOpen}">
+    <div class="drawer-header">
+      MENU
+    </div>
+    <a href="/">Home</a>
+    <a href="/phone-numbers">Listar</a>
+    <a href="/phone-numbers/new">Adicionar</a>    
+  </div>
+  
