@@ -10,7 +10,7 @@ Este projeto é o frontend para o sistema de gerenciamento de números de telefo
 6. Node.js e npm (para gerenciamento de pacotes)
 7. Lazy Loading (para carregamento otimizado dos módulos)
 
-## Instalação BACKEND
+## Instalação FRONTEND
 
 1. Clone o repositório:
 ```bash    
